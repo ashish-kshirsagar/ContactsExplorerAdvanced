@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/view_border">
+
+
+    <TableLayout
+        android:id="@+id/table_reset_tutorial"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:stretchColumns="*"
+        android:background="@color/navbar_background">
+
+        <TableRow
+            android:id="@+id/tutorial_first_row"
+            android:layout_margin="1dip"
+            android:focusable="true"
+            android:clickable="true"
+            android:layout_marginTop="0.2dp"
+            android:layout_marginBottom="0.2dp" >
+            <TextView
+                android:id="@+id/tv_cancel_dialog"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Cancel"
+                android:textColor="#80CCFF"
+                android:textSize="30sp"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:layout_marginLeft="15dp"
+                android:clickable="true" />
+            <TextView
+                android:id="@+id/tv_dialog_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Add Contact"
+                android:textColor="@android:color/white"
+                android:textSize="30sp"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:layout_marginLeft="15dp" />
+            <TextView
+                android:id="@+id/tv_save_data"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="#80CCFF"
+                android:textSize="30sp"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:layout_marginRight="10dp"
+                android:clickable="true" />
+        </TableRow>
+    </TableLayout>
+
+
+    <TableLayout
+        android:id="@+id/actions_table"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="*"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp">
+        <TableRow
+            android:id="@+id/row1"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp" >
+            <TextView
+                android:id="@+id/tv_first_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:textSize="40sp"
+                android:hint="First Name"
+                android:inputType="text" />
+        </TableRow>
+        <TableRow
+            android:id="@+id/row2"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp" >
+            <TextView
+                android:id="@+id/tv_last_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:textSize="40sp"
+                android:hint="Last Name"
+                android:inputType="text" />
+        </TableRow>
+        <TableRow
+            android:id="@+id/row3"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp" >
+            <TextView
+                android:id="@+id/tv_email"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:textSize="40sp"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:autoLink="email"
+                android:ellipsize="marquee" />
+        </TableRow>
+    </TableLayout>
+
+</LinearLayout>

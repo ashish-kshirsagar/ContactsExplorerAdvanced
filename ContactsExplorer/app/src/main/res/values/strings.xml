@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ContactsExplorer</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="users_empty_list_msg">You have not added any contacts yet</string>
+    <string name="text_add_contacts">Add Contact</string>
+    <string name="text_sort_contacts">Sort Contacts</string>
+    <string name="text_save_order">Save Order</string>
+
+</resources>

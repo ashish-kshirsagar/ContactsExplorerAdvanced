@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_background"
+    android:layout_marginLeft="0dp"
+    android:layout_marginTop="0dp"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:descendantFocusability="blocksDescendants"   >
+
+
+    <TableLayout
+        android:id="@+id/actions_table"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="*"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp">
+        <TableRow
+            android:id="@+id/row1"
+            android:background="@drawable/list_item_selector"
+            android:layout_marginTop="0.2dp"
+            android:layout_marginBottom="0.2dp" >
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/text_add_contacts"
+                android:id="@+id/btn_add_contact"
+                android:layout_toRightOf="@+id/tv_empty_msg"
+                android:layout_weight="1"
+                android:onClick="AddNewContact"
+                android:layout_gravity="center"/>
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/text_sort_contacts"
+                android:id="@+id/btn_sort_contact"
+                android:layout_toRightOf="@+id/tv_empty_msg"
+                android:layout_weight="1"
+                android:onClick="SortContacts"
+                android:layout_gravity="center"/>
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/text_save_order"
+                android:id="@+id/btn_save_order"
+                android:layout_toRightOf="@+id/tv_empty_msg"
+                android:layout_weight="1"
+                android:onClick="SaveSortedContacts"
+                android:layout_gravity="center"/>
+        </TableRow>
+    </TableLayout>
+
+    <ImageView
+        android:id="@+id/iv_contacts_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/contacts_image_view"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/tv_empty_msg"
+        android:layout_margin="50dp"
+        android:layout_below="@id/actions_table"/>
+
+    <TextView
+        android:id="@+id/tv_empty_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/users_empty_list_msg"
+        android:textSize="30sp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp"
+        android:gravity="center"
+        android:textColor="@android:color/darker_gray"
+        android:shadowColor="@android:color/darker_gray"
+        android:shadowDy="3"
+        android:shadowDx="3"
+        android:shadowRadius="5" />
+
+    <LinearLayout
+        android:id="@+id/list_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:descendantFocusability="blocksDescendants"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:layout_below="@id/actions_table">
+
+        <TableLayout
+            android:id="@+id/list_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="*"
+            android:background="@drawable/rounded_top_corners"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp">
+            <TableRow
+                android:id="@+id/first_row"
+                android:background="@drawable/list_item_selector"
+                android:layout_marginTop="0.2dp"
+                android:layout_marginBottom="0.2dp" >
+                <TextView
+                    android:id="@+id/list_title_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Contacts"
+                    android:gravity="center"
+                    android:textColor="@android:color/holo_blue_dark"
+                    android:textSize="30sp" />
+            </TableRow>
+        </TableLayout>
+
+        <LinearLayout
+            android:id="@+id/list_title_separator"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/holo_blue_light"
+            android:orientation="vertical"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp" >
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <com.example.akshirsa.contactsexplorer.View.ContactsListView
+                android:id="@android:id/list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="20dp"
+                android:divider="@android:color/holo_blue_light"
+                android:dividerHeight="1dp"
+                android:descendantFocusability="blocksDescendants"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp" >
+            </com.example.akshirsa.contactsexplorer.View.ContactsListView>
+
+            <ViewStub
+                android:id="@+id/inflate_stub"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout="@layout/empty_view" />
+        </FrameLayout>
+    </LinearLayout>
+</RelativeLayout>
